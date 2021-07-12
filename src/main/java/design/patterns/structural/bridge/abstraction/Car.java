@@ -21,15 +21,29 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package design.patterns.structural.bridge.implementor;
+package design.patterns.structural.bridge.abstraction;
+
+import design.patterns.structural.bridge.implementor.Product;
 
 /**
  *
  * @author faceless
  */
-public interface Product {
+public abstract class Car {
 
-    public String productName();
+    private final Product product;
+    private final String carType;
 
-    public void produce();
+    public Car(Product product, String carType) {
+        this.product = product;
+        this.carType = carType;
+    }
+
+    public abstract void assemble();
+
+    public abstract void produceProduct();
+
+    public void printDetails() {
+        System.out.println("Car: " + carType + ", Product:" + product.productName());
+    }
 }

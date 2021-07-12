@@ -27,9 +27,21 @@ package design.patterns.structural.bridge.implementor;
  *
  * @author faceless
  */
-public interface Product {
+public class CentralLocking implements Product {
 
-    public String productName();
+    private final String productName;
 
-    public void produce();
+    public CentralLocking(String productName) {
+        this.productName = productName;
+    }
+
+    @Override
+    public String productName() {
+        return productName;
+    }
+
+    @Override
+    public void produce() {
+        System.out.println("Producing Central Locking System");
+    }
 }

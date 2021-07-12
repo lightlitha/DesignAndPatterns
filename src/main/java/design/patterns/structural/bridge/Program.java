@@ -21,15 +21,38 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package design.patterns.structural.bridge.implementor;
+package design.patterns.structural.bridge;
+
+import design.patterns.structural.bridge.abstraction.*;
+import design.patterns.structural.bridge.implementor.*;
 
 /**
  *
  * @author faceless
  */
-public interface Product {
+public class Program {
 
-    public String productName();
+    public static void main(String[] args) {
+        Product product = new CentralLocking("Central Locking System");
+        Product product2 = new GearLocking("Gear Locking System");
+        Car car = new BigWheel(product, "BigWheel xz model");
+        car.produceProduct();
+        car.assemble();
+        car.printDetails();
+        System.out.println();
+        car = new BigWheel(product2, "BigWheel xz model");
+        car.produceProduct();
+        car.assemble();
+        car.printDetails();
+        car = new Motoren(product, "Motoren lm model");
+        car.produceProduct();
+        car.assemble();
+        car.printDetails();
+        System.out.println();
+        car = new Motoren(product2, "Motoren lm model");
+        car.produceProduct();
+        car.assemble();
+        car.printDetails();
+    }
 
-    public void produce();
 }
