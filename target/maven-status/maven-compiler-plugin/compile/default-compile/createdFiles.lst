@@ -1,0 +1,5 @@
+design/patterns/structural/adapter/XpayToPayDAdapter.class
+design/patterns/structural/adapter/Client.class
+design/patterns/structural/adapter/interfaces/IPayD.class
+design/patterns/structural/adapter/XPay.class
+design/patterns/structural/adapter/interfaces/IXPay.class
