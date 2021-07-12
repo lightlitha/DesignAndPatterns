@@ -48,3 +48,16 @@ Instead of creating a subclass for each product per car model in the above discu
 different hierarchies. One interface is for the product which will be used as an implementer and the other will be an abstraction
 of car type. The implementer will be implemented by the concrete implementers and provides an implementation for it. On the
 other side, the abstraction will be extended by more refined abstraction. Picture 3
+
+
+# Usage
+
+You should use the Bridge Pattern when:
+• You want to avoid a permanent binding between an abstraction and its implementation. This might be the case, for example,
+when the implementation must be selected or switched at run-time.
+• Both the abstractions and their implementations should be extensible by sub-classing. In this case, the Bridge pattern lets you
+combine the different abstractions and implementations and extend them independently.
+• Changes in the implementation of an abstraction should have no impact on clients; that is, their code should not have to be
+recompiled.
+• You want to share an implementation among multiple objects (perhaps using reference counting), and this fact should be hidden
+from the client
